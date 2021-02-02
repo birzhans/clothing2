@@ -31,7 +31,6 @@ class Directory extends Component {
 				size: 'large',
 				id: 4,
 				linkUrl: 'shop/womens',
-				size: 'large'
 			  },
 			  {
 				title: 'mens',
@@ -39,7 +38,6 @@ class Directory extends Component {
 				size: 'large',
 				id: 5,
 				linkUrl: 'shop/mens',
-				size: 'large'
 			  }]
 		}
 	}
@@ -48,13 +46,11 @@ class Directory extends Component {
 		return (
 			<div className='directory-menu'>
 				{
-					this.state.sections.map(({title, imageUrl, size, id, linkUrl}) => (
+					this.state.sections.map(({id, ...otherProps}) => (
 						<MenuItem 
-							title={title} 
-							imageUrl={imageUrl} 
-							size={size} 
+							{...otherProps}
 							id={id} 
-							linkUrl={linkUrl} />
+							/>
 					))
 				}
 			</div>
